@@ -11,7 +11,6 @@ import (
 	"github.com/2dust/AndroidLibV2rayLite/CoreI"
 	"github.com/2dust/AndroidLibV2rayLite/Process/Escort"
 	"github.com/2dust/AndroidLibV2rayLite/VPN"
-	"github.com/2dust/AndroidLibV2rayLite/shippedBinarys"
 	mobasset "golang.org/x/mobile/asset"
 
 	v2core "v2ray.com/core"
@@ -44,6 +43,7 @@ type V2RayPoint struct {
 	closeChan chan struct{}
 
 	PackageName          string
+	PackageCodePath      string
 	DomainName           string
 	ConfigureFileContent string
 	EnableLocalDNS       bool
@@ -67,6 +67,7 @@ func (v *V2RayPoint) RunLoop() (err error) {
 	defer v.v2rayOP.Unlock()
 	//Construct Context
 	v.status.PackageName = v.PackageName
+	v.status.PackageCodePath = v.PackageCodePath
 
 	if !v.status.IsRunning {
 		v.closeChan = make(chan struct{})
@@ -225,15 +226,9 @@ func NewV2RayPoint(s V2RayVPNServiceSupportsSet) *V2RayPoint {
 }
 
 func (v V2RayPoint) runTun2socks() error {
-	shipb := shippedBinarys.FirstRun{Status: v.status}
-	if err := shipb.CheckAndExport(); err != nil {
-		log.Println(err)
-		return err
-	}
-
 	v.escorter.EscortingUp()
 	go v.escorter.EscortRun(
-		v.status.GetApp("tun2socks"),
+		v.status.GetApp("libtun2socks.so"),
 		v.status.GetTun2socksArgs(v.EnableLocalDNS, v.ForwardIpv6), "",
 		v.SupportSet.SendFd)
 

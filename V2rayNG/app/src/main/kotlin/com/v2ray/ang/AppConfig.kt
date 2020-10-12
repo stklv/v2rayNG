@@ -11,7 +11,10 @@ object AppConfig {
     const val PREF_CURR_CONFIG_GUID = "pref_v2ray_config_guid"
     const val PREF_CURR_CONFIG_NAME = "pref_v2ray_config_name"
     const val PREF_CURR_CONFIG_DOMAIN = "pref_v2ray_config_domain"
+    const val PREF_CURR_CONFIG_OUTBOUND_TAGS = "pref_v2ray_config_outbound_tags"
     const val PREF_INAPP_BUY_IS_PREMIUM = "pref_inapp_buy_is_premium"
+    const val PREF_MODE = "pref_mode"
+
     const val VMESS_PROTOCOL: String = "vmess://"
     const val SS_PROTOCOL: String = "ss://"
     const val SOCKS_PROTOCOL: String = "socks://"
@@ -35,6 +38,7 @@ object AppConfig {
     const val androidpackagenamelistUrl = "https://raw.githubusercontent.com/2dust/androidpackagenamelist/master/proxy.txt"
     const val v2rayCustomRoutingListUrl = "https://raw.githubusercontent.com/2dust/v2rayCustomRoutingList/master/"
     const val v2rayNGIssues = "https://github.com/2dust/v2rayNG/issues"
+    const val v2rayNGWikiMode = "https://github.com/2dust/v2rayNG/wiki/Mode"
     const val promotionUrl = "https://1.2345345.xyz/ads.html"
 
     const val DNS_AGENT = "1.1.1.1"

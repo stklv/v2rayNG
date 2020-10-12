@@ -3,7 +3,7 @@
     <string name="app_name">v2rayNG</string>
     <string name="app_widget_name">切換</string>
     <string name="app_tile_name">切換</string>
-    <string name="app_tile_first_use">首次使用此功能，請使用此應用程式來啟用 VPN</string>
+    <string name="app_tile_first_use">首次使用此功能，請使用此應用程式新增組態</string>
     <string name="navigation_drawer_open">Open navigation drawer</string>
     <string name="navigation_drawer_close">Close navigation drawer</string>
 
@@ -74,7 +74,6 @@
 
     <!-- Preferences -->
     <string name="title_settings">設定</string>
-    <string name="title_about">關於</string>
     <string name="title_advanced">進階設定</string>
 
     <string name="title_pref_per_app_proxy">Proxy 個別應用程式</string>
@@ -125,7 +124,8 @@
     <string name="title_pref_promotion">推廣</string>
     <string name="summary_pref_promotion">一些推廣,點擊查看詳情(捐款可去除)</string>
 
-    <string name="title_pref_version">版本</string>
+    <string name="title_mode">模式</string>
+    <string name="title_mode_help">點此查看更多幫助</string>
 
     <string name="donate_error_setup">錯誤設定:</string>
     <string name="donate_error_inventory">Error querying inventory</string>
@@ -188,4 +188,10 @@
     <string name="toast_warning_pref_proxysharing">其他設備可以使用socks/http協定通過您的IP地址連接到代理\nHttp 代理: http://您的ip:10809\nSocks 代理: socks(4/5)://您的ip:10808\n僅在受信任的網路中啟用以避免未經授權的連接</string>
     <string name="toast_warning_pref_proxysharing_short">代理共享已啟用，請確保處於受信網路</string>
     <string name="toast_malformed_josn">配置格式錯誤</string>
+
+    <string-array name="mode_entries">
+        <item>VPN</item>
+        <item>僅代理</item>
+    </string-array>
+
 </resources>
