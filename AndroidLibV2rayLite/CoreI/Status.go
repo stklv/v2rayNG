@@ -6,6 +6,7 @@ import (
 
 type Status struct {
 	IsRunning       bool
+	IsTRunning      bool
 	PackageName     string
 	PackageCodePath string
 
@@ -13,7 +14,7 @@ type Status struct {
 }
 
 func CheckVersion() int {
-	return 21
+	return 22
 }
 
 func (v *Status) GetDataDir() string {
